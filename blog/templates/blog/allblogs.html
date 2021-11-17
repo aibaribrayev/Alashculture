@@ -51,9 +51,6 @@
               <li class="nav-item">
                 <a class="nav-link" aria-current="page" href="{% url 'home' %}">Home</a>
               </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">Eagle Hunting</a>
-              </li>
               <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                   Qazaq Nation
@@ -61,12 +58,10 @@
                 <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                   <li><a class="dropdown-item" href="#">History</a></li>
                   <li><a class="dropdown-item active" href="#">Culture</a></li>
-                  <li><hr class="dropdown-divider"></li>
-                  <li><a class="dropdown-item" href="#">Connect</a></li>
                 </ul>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">About us</a>
+                <a class="nav-link" aria-current="page" href="https://alashculture.wordpress.com/eagle-hunting/">Eagle Hunting</a>
               </li>
             </ul>
           </div>
@@ -75,22 +70,23 @@
     </header>
 
 <main>
-  <div class="container">
+  <div class="container-md">
 
     <h1 class="text-center pt-3">Kazakh Culture</h1>
     <br />
-    <br />
-    <h2 class="text-center pt-3">Latest Posts</h2>
-    <hr />
-  </div>
-
   {% for blog in blogs.all %}
-    <h3>{{ blog.title }}<</h3>
+    <div class="text-center">
+      <img class="img-fluid" src="{{ blog.image.url }}" height=600 width=600 >
+    </div>
     <br />
-    <img class="img-fluid" src="{{ blog.image.url }}" height=200 width=200 >
+    <h3 class="text-center">{{ blog.title }}</h3>
+    <p class=class="text-center">{{ blog.body }}</p>
+    <a href="{{ blog.readmore }}" target="_blank">read more</a>
     <br />
-    <p>{{ blog.body }}</p>
+    <br />
+    <br />
   {% endfor %}
+  </div>
 
 </main>
 

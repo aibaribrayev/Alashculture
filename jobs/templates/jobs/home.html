@@ -7,10 +7,6 @@
   <meta name="description" content="">
   <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
   <meta name="generator" content="Hugo 0.88.1">
-  <title>Haha</title>
-
-  <link rel="canonical" href="https://getbootstrap.com/docs/5.1/examples/album/">
-
 
 
   <!-- Bootstrap core CSS -->
@@ -57,9 +53,6 @@
             <li class="nav-item">
               <a class="nav-link active" aria-current="page" href="#">Home</a>
             </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Eagle Hunting</a>
-            </li>
             <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                 Qazaq Nation
@@ -67,12 +60,10 @@
               <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                 <li><a class="dropdown-item" href="#">History</a></li>
                 <li><a class="dropdown-item" href="{% url 'allblogs' %}">Culture</a></li>
-                <li><hr class="dropdown-divider"></li>
-                <li><a class="dropdown-item" href="#">Connect</a></li>
               </ul>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link">About us</a>
+              <li class="nav-item">
+                <a class="nav-link" aria-current="page" href="https://alashculture.wordpress.com/eagle-hunting/">Eagle Hunting</a>
+              </li>
             </li>
           </ul>
         </div>
@@ -85,18 +76,17 @@
         <div class="row py-lg-5">
           <div class="col-lg-6 col-md-8 mx-auto">
             <h1 class="fw-light">Alash Culture</h1>
-            <p class="lead text-muted">Here you can learn and experience Kazakh culture. We collected contacts and valuable information about eagle hunters, grooms, and artisans from around Kazakh land.  Please contact us to arrange a meeting with any of these people.</p>
+            <p class="lead text-muted">Learn and experience Kazakh culture here! Below you can find contacts and valuable information about eagle hunters, horse grooms, and artisans from around Kazakhstan.</p>
             <p>
-              <a href="#" class="btn btn-primary my-2">Meet Eagle Hunters</a>
-              <a href="#" class="btn btn-secondary my-2">Explore Kazakh Culture</a>
+              <a href="mailto:alashculture@gmail.com" class="btn btn-primary my-2">Meet Eagle Hunters</a>
+              <a href="{% url 'allblogs' %}" class="btn btn-secondary my-2">Explore Kazakh Culture</a>
             </p>
           </div>
         </div>
     </section>
-
     <div class="album py-5 bg-light">
       <div class="container">
-
+        <p class="text-center fst-italic"> You can find people close to your city and contact them via facebook or email us. For know I included mostly eagle hunters, as it is espessially hard to find them</p>
         <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
 
           {% for job in jobs.all %}
@@ -104,12 +94,16 @@
             <div class="card shadow-sm">
               <img class="card-img-fluid-top" height=auto width=100% src="{{ job.image.url }}" />
               <div class="card-body">
-                <p class="card-text">{{ job.summary }}</p>
+                <h5 class="card-text">{{ job.summary }}</h5>
+                <br />
+                <p class="fst-italic">{{ job.position }}</p>
+                <br />
+                <p class="card-text">{{ job.body }}</p>
                 <div class="d-flex justify-content-between align-items-center">
-                  <div class="btn-group">
-                    <button type="button" class="btn btn-sm btn-outline-secondary" >Facebook</button>
-                    <button type="button" class="btn btn-sm btn-outline-secondary">Email</button>
-                  </div>
+                  <p>
+                    <a href="{{ job.field_name }}" target="_blank" class="btn btn-sm btn-outline-secondary">Facebook</a>
+                    <a href="mailto:alashculture@gmail.com" class="btn btn-sm btn-outline-secondary">Email</a>
+                  </p>
                 </div>
               </div>
 
@@ -118,6 +112,7 @@
           {% endfor %}
 
         </div>
+
       </div>
     </div>
 

@@ -1,7 +1,6 @@
 <!doctype html>
 <html lang="en">
 <head>
-  {% load staticfiles %}
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="">
@@ -73,16 +72,16 @@
 
   <main>
     <section class="py-5 text-center container">
-        <div class="row py-lg-5">
-          <div class="col-lg-6 col-md-8 mx-auto">
-            <h1 class="fw-light">Alash Culture</h1>
-            <p class="lead text-muted">Learn and experience Kazakh culture here! Below you can find contacts and valuable information about eagle hunters, horse grooms, and artisans from around Kazakhstan.</p>
-            <p>
-              <a href="mailto:alashculture@gmail.com" class="btn btn-primary my-2">Meet Eagle Hunters</a>
-              <a href="{% url 'allblogs' %}" class="btn btn-secondary my-2">Explore Kazakh Culture</a>
-            </p>
-          </div>
+      <div class="row py-lg-5">
+        <div class="col-lg-6 col-md-8 mx-auto">
+          <h1 class="fw-light">Alash Culture</h1>
+          <p class="lead text-muted">Learn and experience Kazakh culture here! Below you can find contacts and valuable information about eagle hunters, horse grooms, and artisans from around Kazakhstan.</p>
+          <p>
+            <a href="mailto:alashculture@gmail.com" class="btn btn-primary my-2">Meet Eagle Hunters</a>
+            <a href="{% url 'allblogs' %}" class="btn btn-secondary my-2">Explore Kazakh Culture</a>
+          </p>
         </div>
+      </div>
     </section>
     <div class="album py-5 bg-light">
       <div class="container">
@@ -132,5 +131,5 @@
   <!-- JavaScript Bundle with Popper -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 
-    </body>
-  </html>
+</body>
+</html>

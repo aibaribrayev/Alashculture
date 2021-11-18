@@ -56,8 +56,8 @@
                   Qazaq Nation
                 </a>
                 <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                  <li><a class="dropdown-item" href="{% url 'allhistory' %}">History</a></li>
-                  <li><a class="dropdown-item active" href="{% url 'allblogs' %}">Culture</a></li>
+                  <li><a class="dropdown-item active" href="{% url 'allhistory' %}">History</a></li>
+                  <li><a class="dropdown-item" href="{% url 'allblogs' %}">Culture</a></li>
                 </ul>
               </li>
               <li class="nav-item">
@@ -72,16 +72,16 @@
 <main>
   <div class="container-md">
 
-    <h1 class="text-center pt-3">Kazakh Culture</h1>
+    <h1 class="text-center pt-3">History</h1>
     <br />
-  {% for blog in blogs.all %}
+  {% for hist in history.all %}
     <div class="text-center">
-      <img class="img-fluid" src="{{ blog.image.url }}" height=600 width=600 >
+      <img class="img-fluid" src="{{ hist.image.url }}" height=600 width=600 >
     </div>
     <br />
-    <h3 class="text-center">{{ blog.title }}</h3>
-    <p class=class="text-center">{{ blog.body }}</p>
-    <a href="{{ blog.readmore }}" target="_blank">read more</a>
+    <h3 class="text-center">{{ hist.title }}</h3>
+    <p class=class="text-center">{{ hist.body|linebreaks }}</p>
+    <a href="{{ hist.readmore }}" target="_blank">read more</a>
     <br />
     <br />
     <br />
